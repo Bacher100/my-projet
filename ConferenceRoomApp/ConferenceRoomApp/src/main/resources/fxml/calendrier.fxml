@@ -13,7 +13,7 @@
         <DatePicker fx:id="datePicker"/>
         <Label text="Salle:" style="-fx-font-weight: bold;"/>
         <ComboBox fx:id="salleFilter" promptText="Toutes les salles" prefWidth="200"/>
-        <Button text="Appliquer" onAction="#applyFilters" styleClass="btn-primary"/>
+
     </HBox>
 
     <TableView fx:id="tableCalendrier" VBox.vgrow="ALWAYS">

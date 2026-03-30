@@ -114,16 +114,28 @@ public class EquipementsController {
         grid.add(new Label("Statut:"), 0, 3); grid.add(statutCombo, 1, 3);
         dialog.getDialogPane().setContent(grid);
 
+        // Disable OK button when nom is empty or quantite is not a valid integer
+        javafx.scene.Node okButton = dialog.getDialogPane().lookupButton(ButtonType.OK);
+        okButton.setDisable(nomField.getText().trim().isEmpty());
+        nomField.textProperty().addListener((obs, o, n) -> {
+            boolean invalid = n.trim().isEmpty();
+            try { Integer.parseInt(quantiteField.getText().trim()); }
+            catch (NumberFormatException ex) { invalid = true; }
+            okButton.setDisable(invalid);
+        });
+        quantiteField.textProperty().addListener((obs, o, n) -> {
+            boolean invalid = nomField.getText().trim().isEmpty();
+            try { Integer.parseInt(n.trim()); }
+            catch (NumberFormatException ex) { invalid = true; }
+            okButton.setDisable(invalid);
+        });
+
         dialog.setResultConverter(bt -> {
             if (bt == ButtonType.OK) {
                 Equipement e2 = eq != null ? eq : new Equipement();
                 e2.setNom(nomField.getText().trim());
                 e2.setDescription(descriptionField.getText().trim());
-                try { e2.setQuantiteTotale(Integer.parseInt(quantiteField.getText().trim())); }
-                catch (NumberFormatException ex) {
-                    AlertUtil.showError("Saisie invalide", "La quantité doit être un nombre entier valide.");
-                    return null;
-                }
+                e2.setQuantiteTotale(Integer.parseInt(quantiteField.getText().trim()));
                 e2.setStatut(statutCombo.getValue());
                 return e2;
             }

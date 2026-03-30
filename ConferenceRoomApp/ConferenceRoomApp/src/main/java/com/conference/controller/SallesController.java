@@ -117,15 +117,27 @@ public class SallesController {
         grid.add(new Label("Description:"), 0, 3); grid.add(descriptionField, 1, 3);
         dialog.getDialogPane().setContent(grid);
 
+        // Disable OK button when nom is empty or capacite is not a valid integer
+        javafx.scene.Node okButton = dialog.getDialogPane().lookupButton(ButtonType.OK);
+        okButton.setDisable(nomField.getText().trim().isEmpty());
+        nomField.textProperty().addListener((obs, o, n) -> {
+            boolean invalid = n.trim().isEmpty();
+            try { Integer.parseInt(capaciteField.getText().trim()); }
+            catch (NumberFormatException e) { invalid = true; }
+            okButton.setDisable(invalid);
+        });
+        capaciteField.textProperty().addListener((obs, o, n) -> {
+            boolean invalid = nomField.getText().trim().isEmpty();
+            try { Integer.parseInt(n.trim()); }
+            catch (NumberFormatException e) { invalid = true; }
+            okButton.setDisable(invalid);
+        });
+
         dialog.setResultConverter(bt -> {
             if (bt == ButtonType.OK) {
                 Salle s = salle != null ? salle : new Salle();
                 s.setNom(nomField.getText().trim());
-                try { s.setCapacite(Integer.parseInt(capaciteField.getText().trim())); }
-                catch (NumberFormatException ex) {
-                    AlertUtil.showError("Saisie invalide", "La capacité doit être un nombre entier valide.");
-                    return null;
-                }
+                s.setCapacite(Integer.parseInt(capaciteField.getText().trim()));
                 s.setLocalisation(localisationField.getText().trim());
                 s.setDescription(descriptionField.getText().trim());
                 s.setActive(true);
