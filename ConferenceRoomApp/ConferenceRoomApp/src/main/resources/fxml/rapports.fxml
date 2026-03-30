@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.conference.controller.RapportController"
+      spacing="15" style="-fx-padding: 25; -fx-background-color: #f0f2f5;">
+
+    <Label text="Rapports" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="btnExportPDF" text="📄 Exporter PDF" styleClass="btn-primary"/>
+        <Button fx:id="btnExportCSV" text="📊 Exporter CSV" styleClass="btn-secondary"/>
+        <Label fx:id="lblDureeMoyenne" text="" style="-fx-padding: 0 0 0 20;"/>
+    </HBox>
+
+    <TableView fx:id="tableRapport" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colTitre" text="Titre" prefWidth="200"/>
+            <TableColumn fx:id="colSalle" text="Salle" prefWidth="150"/>
+            <TableColumn fx:id="colDebut" text="Début" prefWidth="150"/>
+            <TableColumn fx:id="colStatut" text="Statut" prefWidth="120"/>
+            <TableColumn fx:id="colParticipants" text="Participants" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

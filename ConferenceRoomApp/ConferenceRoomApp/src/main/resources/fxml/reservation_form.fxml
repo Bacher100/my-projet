@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.conference.controller.ReservationFormController"
+      spacing="15" style="-fx-padding: 30; -fx-background-color: white;"
+      prefWidth="600">
+
+    <Label text="Réservation" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+
+    <Label text="Titre *" style="-fx-font-weight: bold;"/>
+    <TextField fx:id="titreField" promptText="Titre de la réservation"/>
+
+    <Label text="Description" style="-fx-font-weight: bold;"/>
+    <TextArea fx:id="descriptionArea" promptText="Description..." prefRowCount="3"/>
+
+    <Label text="Salle *" style="-fx-font-weight: bold;"/>
+    <ComboBox fx:id="salleCombo" maxWidth="Infinity"/>
+    <Label fx:id="salleInfoLabel" text="" style="-fx-text-fill: #666; -fx-font-size: 11;"/>
+
+    <Label text="Date *" style="-fx-font-weight: bold;"/>
+    <DatePicker fx:id="datePicker" maxWidth="Infinity"/>
+
+    <HBox spacing="10">
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Heure début" style="-fx-font-weight: bold;"/>
+            <HBox spacing="5">
+                <Spinner fx:id="heureDebutSpinner" prefWidth="70"/>
+                <Label text="h"/>
+                <Spinner fx:id="minuteDebutSpinner" prefWidth="70"/>
+            </HBox>
+        </VBox>
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Heure fin" style="-fx-font-weight: bold;"/>
+            <HBox spacing="5">
+                <Spinner fx:id="heureFinSpinner" prefWidth="70"/>
+                <Label text="h"/>
+                <Spinner fx:id="minuteFinSpinner" prefWidth="70"/>
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <Label text="Nombre de participants *" style="-fx-font-weight: bold;"/>
+    <Spinner fx:id="participantsSpinner" prefWidth="120"/>
+
+    <Label text="Disposition" style="-fx-font-weight: bold;"/>
+    <ComboBox fx:id="dispositionCombo" maxWidth="Infinity"/>
+
+    <Label text="Équipements" style="-fx-font-weight: bold;"/>
+    <ListView fx:id="equipementsListView" prefHeight="120"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="btnAnnuler" text="Annuler" styleClass="btn-secondary"/>
+        <Button fx:id="btnSauvegarder" text="Sauvegarder" styleClass="btn-primary"/>
+    </HBox>
+</VBox>

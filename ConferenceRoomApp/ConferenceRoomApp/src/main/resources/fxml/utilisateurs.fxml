@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.conference.controller.UtilisateursController"
+      spacing="15" style="-fx-padding: 25; -fx-background-color: #f0f2f5;">
+
+    <Label text="Gestion des Utilisateurs" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="btnNouvelUtilisateur" text="+ Nouvel utilisateur" styleClass="btn-primary"/>
+        <Button fx:id="btnModifier" text="✏ Modifier" styleClass="btn-secondary"/>
+        <Button fx:id="btnDesactiver" text="✖ Désactiver" styleClass="btn-danger"/>
+        <TextField fx:id="searchField" promptText="Rechercher..." prefWidth="200"/>
+    </HBox>
+
+    <TableView fx:id="tableUtilisateurs" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNom" text="Nom" prefWidth="150"/>
+            <TableColumn fx:id="colPrenom" text="Prénom" prefWidth="150"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
+            <TableColumn fx:id="colRole" text="Rôle" prefWidth="120"/>
+            <TableColumn fx:id="colActif" text="Actif" prefWidth="80"/>
+        </columns>
+    </TableView>
+</VBox>

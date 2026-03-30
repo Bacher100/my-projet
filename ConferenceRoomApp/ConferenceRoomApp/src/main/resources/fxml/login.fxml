@@ -4,7 +4,7 @@
 <?import javafx.scene.text.*?>
 
 <StackPane xmlns:fx="http://javafx.com/fxml"
-           fx:controller="com.reservation.controller.LoginController"
+           fx:controller="com.conference.controller.LoginController"
            style="-fx-background-color: linear-gradient(to bottom right, #1565C0, #42A5F5);">
 
     <VBox alignment="CENTER" spacing="0"

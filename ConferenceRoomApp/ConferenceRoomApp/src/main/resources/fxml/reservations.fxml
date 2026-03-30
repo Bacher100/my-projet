@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.conference.controller.ReservationController"
+      spacing="15" style="-fx-padding: 25; -fx-background-color: #f0f2f5;">
+
+    <Label text="Mes Réservations" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="btnNouvelleReservation" text="+ Nouvelle réservation" styleClass="btn-primary"/>
+        <Button fx:id="btnModifier" text="✏ Modifier" styleClass="btn-secondary"/>
+        <Button fx:id="btnAnnuler" text="✖ Annuler" styleClass="btn-danger"/>
+        <Label text="Statut:" style="-fx-padding: 0 0 0 20;"/>
+        <ComboBox fx:id="filtreStatut" promptText="Tous les statuts" prefWidth="160"/>
+        <TextField fx:id="searchField" promptText="Rechercher..." prefWidth="200"/>
+        <Label fx:id="totalLabel" text=""/>
+    </HBox>
+
+    <TableView fx:id="tableReservations" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colTitre" text="Titre" prefWidth="200"/>
+            <TableColumn fx:id="colSalle" text="Salle" prefWidth="150"/>
+            <TableColumn fx:id="colDebut" text="Début" prefWidth="150"/>
+            <TableColumn fx:id="colFin" text="Fin" prefWidth="150"/>
+            <TableColumn fx:id="colStatut" text="Statut" prefWidth="120"/>
+            <TableColumn fx:id="colParticipants" text="Participants" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

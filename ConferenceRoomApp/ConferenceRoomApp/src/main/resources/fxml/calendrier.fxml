@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.conference.controller.CalendrierController"
+      spacing="15" style="-fx-padding: 25; -fx-background-color: #f0f2f5;">
+
+    <Label text="Calendrier des Réservations" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Date:" style="-fx-font-weight: bold;"/>
+        <DatePicker fx:id="datePicker"/>
+        <Label text="Salle:" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="salleFilter" promptText="Toutes les salles" prefWidth="200"/>
+
+    </HBox>
+
+    <TableView fx:id="tableCalendrier" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colTitre" text="Titre" prefWidth="200"/>
+            <TableColumn fx:id="colSalle" text="Salle" prefWidth="150"/>
+            <TableColumn fx:id="colDebut" text="Début" prefWidth="150"/>
+            <TableColumn fx:id="colFin" text="Fin" prefWidth="150"/>
+            <TableColumn fx:id="colStatut" text="Statut" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>

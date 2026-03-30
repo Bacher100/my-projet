@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.conference.controller.NotificationsController"
+      spacing="15" style="-fx-padding: 25; -fx-background-color: #f0f2f5;">
+
+    <Label text="Notifications" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="btnMarquerLu" text="✓ Tout marquer comme lu" styleClass="btn-primary"/>
+    </HBox>
+
+    <TableView fx:id="tableNotifications" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colTitre" text="Titre" prefWidth="200"/>
+            <TableColumn fx:id="colMessage" text="Message" prefWidth="300"/>
+            <TableColumn fx:id="colType" text="Type" prefWidth="120"/>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>
