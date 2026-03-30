@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:id="mainPane"
+            fx:controller="com.conference.controller.MainController"
+            prefWidth="1280" prefHeight="800">
+
+    <left>
+        <VBox spacing="0" prefWidth="220"
+              style="-fx-background-color: #1A237E; -fx-padding: 0;">
+
+            <VBox alignment="CENTER" spacing="4"
+                  style="-fx-padding: 25 15; -fx-background-color: #0D1B6B;">
+                <Label text="🏢" style="-fx-font-size: 32;"/>
+                <Label text="SalleConf" style="-fx-text-fill: white;
+                       -fx-font-size: 16; -fx-font-weight: bold;"/>
+                <Label fx:id="roleLabel" text="UTILISATEUR"
+                       style="-fx-text-fill: #90CAF9; -fx-font-size: 10;"/>
+            </VBox>
+
+            <VBox style="-fx-padding: 12 15; -fx-background-color: #283593;">
+                <Label fx:id="welcomeLabel" text="Bonjour !"
+                       style="-fx-text-fill: white; -fx-font-size: 12;
+                              -fx-font-weight: bold;"/>
+            </VBox>
+
+            <VBox spacing="2" style="-fx-padding: 10 8;" VBox.vgrow="ALWAYS">
+                <Button fx:id="btnDashboard" text="📊  Tableau de bord"
+                        maxWidth="Infinity" alignment="CENTER_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #E8EAF6;
+                               -fx-font-size: 13; -fx-padding: 10 15; -fx-cursor: hand;
+                               -fx-background-radius: 6;"/>
+                <Button fx:id="btnCalendrier" text="📅  Calendrier"
+                        maxWidth="Infinity" alignment="CENTER_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #E8EAF6;
+                               -fx-font-size: 13; -fx-padding: 10 15; -fx-cursor: hand;
+                               -fx-background-radius: 6;"/>
+                <Button fx:id="btnReservations" text="📋  Réservations"
+                        maxWidth="Infinity" alignment="CENTER_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #E8EAF6;
+                               -fx-font-size: 13; -fx-padding: 10 15; -fx-cursor: hand;
+                               -fx-background-radius: 6;"/>
+                <Button fx:id="btnSalles" text="🏠  Salles"
+                        maxWidth="Infinity" alignment="CENTER_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #E8EAF6;
+                               -fx-font-size: 13; -fx-padding: 10 15; -fx-cursor: hand;
+                               -fx-background-radius: 6;"/>
+                <Button fx:id="btnEquipements" text="🖥  Équipements"
+                        maxWidth="Infinity" alignment="CENTER_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #E8EAF6;
+                               -fx-font-size: 13; -fx-padding: 10 15; -fx-cursor: hand;
+                               -fx-background-radius: 6;"/>
+                <Button fx:id="btnRapports" text="📈  Rapports"
+                        maxWidth="Infinity" alignment="CENTER_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #E8EAF6;
+                               -fx-font-size: 13; -fx-padding: 10 15; -fx-cursor: hand;
+                               -fx-background-radius: 6;"/>
+
+                <VBox fx:id="adminMenu" spacing="2">
+                    <Button fx:id="btnUtilisateurs" text="👤  Utilisateurs"
+                            maxWidth="Infinity" alignment="CENTER_LEFT"
+                            style="-fx-background-color: transparent; -fx-text-fill: #E8EAF6;
+                                   -fx-font-size: 13; -fx-padding: 10 15; -fx-cursor: hand;
+                                   -fx-background-radius: 6;"/>
+                </VBox>
+
+                <Button fx:id="btnNotifications" text="🔔  Notifications"
+                        maxWidth="Infinity" alignment="CENTER_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #E8EAF6;
+                               -fx-font-size: 13; -fx-padding: 10 15; -fx-cursor: hand;
+                               -fx-background-radius: 6;">
+                    <graphic>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label fx:id="notifCountLabel" text="0"
+                                   style="-fx-background-color: #EF5350;
+                                          -fx-text-fill: white; -fx-font-size: 10;
+                                          -fx-padding: 1 5; -fx-background-radius: 10;"
+                                   visible="false"/>
+                        </HBox>
+                    </graphic>
+                </Button>
+            </VBox>
+
+            <VBox style="-fx-padding: 10 8 20 8;">
+                <Button fx:id="btnLogout" text="🚪  Déconnexion"
+                        maxWidth="Infinity" alignment="CENTER_LEFT"
+                        style="-fx-background-color: transparent; -fx-text-fill: #EF9A9A;
+                               -fx-font-size: 13; -fx-padding: 10 15; -fx-cursor: hand;
+                               -fx-background-radius: 6;"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <BorderPane fx:id="contentPane"
+                    style="-fx-background-color: #f0f2f5;"/>
+    </center>
+
+</BorderPane>

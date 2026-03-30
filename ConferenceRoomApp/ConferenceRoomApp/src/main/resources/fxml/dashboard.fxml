@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+
+<ScrollPane fitToWidth="true" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.conference.controller.DashboardController"
+            style="-fx-background-color: #f0f2f5;">
+    <VBox spacing="20" style="-fx-padding: 25;">
+        <Label text="Tableau de bord" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+        <HBox spacing="15">
+            <VBox styleClass="kpi-card" HBox.hgrow="ALWAYS" spacing="5" alignment="CENTER">
+                <Label text="Total Réservations" styleClass="kpi-label"/>
+                <Label fx:id="lblTotalReservations" text="0" styleClass="kpi-value"/>
+            </VBox>
+            <VBox styleClass="kpi-card" HBox.hgrow="ALWAYS" spacing="5" alignment="CENTER">
+                <Label text="Aujourd'hui" styleClass="kpi-label"/>
+                <Label fx:id="lblReservationsAujourdhui" text="0" styleClass="kpi-value"/>
+            </VBox>
+            <VBox styleClass="kpi-card" HBox.hgrow="ALWAYS" spacing="5" alignment="CENTER">
+                <Label text="Salles Actives" styleClass="kpi-label"/>
+                <Label fx:id="lblSallesActives" text="0" styleClass="kpi-value"/>
+            </VBox>
+            <VBox styleClass="kpi-card" HBox.hgrow="ALWAYS" spacing="5" alignment="CENTER">
+                <Label text="Utilisateurs" styleClass="kpi-label"/>
+                <Label fx:id="lblUtilisateurs" text="0" styleClass="kpi-value"/>
+            </VBox>
+            <VBox styleClass="kpi-card" HBox.hgrow="ALWAYS" spacing="5" alignment="CENTER">
+                <Label text="Confirmées" styleClass="kpi-label"/>
+                <Label fx:id="lblReservationsConfirmees" text="0" styleClass="kpi-value"/>
+            </VBox>
+            <VBox styleClass="kpi-card" HBox.hgrow="ALWAYS" spacing="5" alignment="CENTER">
+                <Label text="Annulées" styleClass="kpi-label"/>
+                <Label fx:id="lblReservationsAnnulees" text="0" styleClass="kpi-value"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="15">
+            <BarChart fx:id="barChart" HBox.hgrow="ALWAYS" prefHeight="300">
+                <xAxis><CategoryAxis fx:id="xAxis" label="Mois"/></xAxis>
+                <yAxis><NumberAxis fx:id="yAxis" label="Réservations"/></yAxis>
+            </BarChart>
+            <PieChart fx:id="pieChart" HBox.hgrow="ALWAYS" prefHeight="300" title="Statuts"/>
+        </HBox>
+    </VBox>
+</ScrollPane>

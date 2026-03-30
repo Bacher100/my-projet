@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.conference.controller.RegisterController"
+      spacing="15" style="-fx-padding: 40 50; -fx-background-color: white;"
+      prefWidth="500">
+
+    <Label text="Créer un compte" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #1565C0;"/>
+
+    <Label text="Nom *" style="-fx-font-weight: bold;"/>
+    <TextField fx:id="nomField" promptText="Votre nom"/>
+
+    <Label text="Prénom *" style="-fx-font-weight: bold;"/>
+    <TextField fx:id="prenomField" promptText="Votre prénom"/>
+
+    <Label text="Email *" style="-fx-font-weight: bold;"/>
+    <TextField fx:id="emailField" promptText="votre@email.com"/>
+
+    <Label text="Téléphone" style="-fx-font-weight: bold;"/>
+    <TextField fx:id="telephoneField" promptText="Numéro de téléphone"/>
+
+    <Label text="Mot de passe *" style="-fx-font-weight: bold;"/>
+    <PasswordField fx:id="passwordField" promptText="••••••••"/>
+
+    <Label text="Confirmer le mot de passe *" style="-fx-font-weight: bold;"/>
+    <PasswordField fx:id="confirmPasswordField" promptText="••••••••"/>
+
+    <Label fx:id="errorLabel" text="" style="-fx-text-fill: #e74c3c; -fx-font-size: 12;"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="btnAnnuler" text="Annuler" styleClass="btn-secondary"/>
+        <Button fx:id="btnCreerCompte" text="Créer mon compte" styleClass="btn-primary"/>
+    </HBox>
+</VBox>
